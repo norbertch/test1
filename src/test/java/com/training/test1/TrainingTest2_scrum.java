@@ -11,10 +11,10 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TrainingTest2 {
+public class TrainingTest2_scrum {
 
     @Test
-    public void startWebDriver(){
+    public void trainingtest2(){
 
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("intl.accept_languages", "en-gb");

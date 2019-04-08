@@ -12,19 +12,17 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TrainingTest {
+public class TrainingTest1_google {
 
     @Test
-    public void startWebDriver(){
+    public void trainingtest1(){
 
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("intl.accept_languages", "en-gb");
 
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-
-        driver.navigate().to("https://www.google.com/webhp?hl=en&gl=en");
+        driver.get("https://www.google.com/webhp?hl=en&gl=pl");
+//        driver.navigate().to("https://www.google.com/webhp?hl=en&gl=pl");
         Assert.assertTrue("title should start with the Google name",
                             driver.getTitle().startsWith("Google"));
 
@@ -32,10 +30,8 @@ public class TrainingTest {
         searchbox.sendKeys("microsoft");
         searchbox.submit();
 
-
         List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Microsoft - Official Home Page" + "')]"));
         Assert.assertTrue("Text not found!", list.size() > 0);
-
 
         WebElement mssearchbox = driver.findElement(By.xpath("//input[@id='nqsbq']"));
         mssearchbox.sendKeys("surface");
@@ -45,6 +41,8 @@ public class TrainingTest {
 
         List<WebElement> list_search = driver.findElements(By.xpath("//*[contains(text(),'" + "surface site:microsoft.com" + "')]"));
         Assert.assertTrue("Text not found!", list_search.size() > 0);
+
+        driver.close();
     }
 
 
