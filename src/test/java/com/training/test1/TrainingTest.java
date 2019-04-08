@@ -25,7 +25,7 @@ public class TrainingTest {
 
 
         driver.navigate().to("https://www.google.com/webhp?hl=en&gl=en");
-        Assert.assertTrue("title should start with sth",
+        Assert.assertTrue("title should start with the Google name",
                             driver.getTitle().startsWith("Google"));
 
         WebElement searchbox = driver.findElement(By.name("q"));
