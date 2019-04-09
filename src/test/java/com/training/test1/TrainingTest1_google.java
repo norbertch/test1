@@ -7,12 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
+
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TrainingTest1_google {
+public class TrainingTest1_google extends BrowserSelect{
 
     @Test
     public void trainingtest1(){
@@ -21,8 +21,7 @@ public class TrainingTest1_google {
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        driver.get("https://www.google.com/webhp?hl=en&gl=pl");
-//        driver.navigate().to("https://www.google.com/webhp?hl=en&gl=pl");
+        driver.navigate().to("https://www.google.com/webhp?hl=en&gl=pl");
         Assert.assertTrue("title should start with the Google name",
                             driver.getTitle().startsWith("Google"));
 
@@ -44,7 +43,4 @@ public class TrainingTest1_google {
 
         driver.close();
     }
-
-
-
 }

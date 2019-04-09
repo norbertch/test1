@@ -22,10 +22,7 @@ public class TrainingTest2_scrum {
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-
         driver.navigate().to("https://www.scrum.org/");
-//        Assert.assertTrue("title should start with sth",
-//                            driver.getTitle().startsWith("Google"));
 
         WebElement certificationsLink = driver.findElement(By.xpath("//a[@href=\"/professional-scrum-certifications\"]"));
         certificationsLink.click();
@@ -43,22 +40,6 @@ public class TrainingTest2_scrum {
 
         WebElement checkCert = driver.findElement(By.xpath(""));
 
-
-
-//        List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Microsoft - Official Home Page" + "')]"));
-//        Assert.assertTrue("Text not found!", list.size() > 0);
-//
-//
-//        WebElement mssearchbox = driver.findElement(By.xpath("//input[@id='nqsbq']"));
-//        mssearchbox.sendKeys("surface");
-//
-//        WebElement searchbutton = driver.findElement(By.xpath("//button[@class='ab_button']"));
-//        searchbutton.click();
-//
-//        List<WebElement> list_search = driver.findElements(By.xpath("//*[contains(text(),'" + "surface site:microsoft.com" + "')]"));
-//        Assert.assertTrue("Text not found!", list_search.size() > 0);
+        driver.close();
     }
-
-
-
 }
